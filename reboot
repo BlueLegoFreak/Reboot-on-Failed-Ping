@@ -1,0 +1,11 @@
+#!/bin/bash
+# BlueLegoFreak
+# this command should reboot the Proxmox server on a failed ping
+
+ping -c1 192.168.33.1
+	if [ $? -eq 0 ]
+	then
+	echo "Good Ping"
+	else
+	/usr/sbin/shutdown -r
+fi
